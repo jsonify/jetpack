@@ -1,0 +1,10 @@
+[gd_scene load_steps=3 format=3 uid="uid://ddhtjdv5wo1fc"]
+
+[ext_resource type="PackedScene" uid="uid://cb0munbfk2mix" path="res://enemy_base.tscn" id="1_g0y6p"]
+[ext_resource type="Script" path="res://pinky.gd" id="2_j42xc"]
+
+[node name="Pinky" instance=ExtResource("1_g0y6p")]
+script = ExtResource("2_j42xc")
+
+[node name="Sprite2D" parent="." index="1"]
+modulate = Color(0.996078, 0.333333, 0.839216, 1)

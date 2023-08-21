@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=3 uid="uid://28k0jy6mj6sg"]
+
+[ext_resource type="Texture2D" uid="uid://drbbefyipbb0w" path="res://assets/hall1.png" id="1_apfx4"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_1vygq"]
+size = Vector2(648, 11)
+
+[node name="Hallway" type="StaticBody2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_apfx4")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 92.5)
+shape = SubResource("RectangleShape2D_1vygq")

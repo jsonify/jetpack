@@ -1,0 +1,50 @@
+[gd_scene load_steps=5 format=3 uid="uid://nj4jwyg7x2wp"]
+
+[ext_resource type="Script" path="res://world.gd" id="1_v8kcy"]
+[ext_resource type="PackedScene" uid="uid://ji4g2o8dwla3" path="res://ground.tscn" id="1_yy5lm"]
+[ext_resource type="PackedScene" uid="uid://ca5pvap204unv" path="res://player.tscn" id="3_fqiu4"]
+[ext_resource type="PackedScene" uid="uid://28k0jy6mj6sg" path="res://hallway.tscn" id="3_oelhl"]
+
+[node name="World" type="Node2D"]
+script = ExtResource("1_v8kcy")
+
+[node name="Ground" type="Node2D" parent="."]
+
+[node name="Ground1" parent="Ground" instance=ExtResource("1_yy5lm")]
+visible = false
+position = Vector2(0, 195)
+
+[node name="Ground2" parent="Ground" instance=ExtResource("1_yy5lm")]
+visible = false
+position = Vector2(384, 195)
+
+[node name="Hallway" parent="Ground" instance=ExtResource("3_oelhl")]
+position = Vector2(316, 108)
+
+[node name="Player" parent="." instance=ExtResource("3_fqiu4")]
+position = Vector2(74, 54)
+
+[node name="ObsticleTimer" type="Timer" parent="."]
+wait_time = 4.0
+one_shot = true
+
+[node name="ScoreTimer" type="Timer" parent="."]
+one_shot = true
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Score" type="Label" parent="Control"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 23.0
+text = "0"
+horizontal_alignment = 1
+
+[connection signal="timeout" from="ObsticleTimer" to="." method="_on_obsticle_timer_timeout"]
+[connection signal="timeout" from="ScoreTimer" to="." method="_on_score_timer_timeout"]
+
+[editable path="Ground/Ground1"]

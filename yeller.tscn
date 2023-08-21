@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=3 uid="uid://bxqs4mvm58pxm"]
+
+[ext_resource type="PackedScene" uid="uid://cb0munbfk2mix" path="res://enemy_base.tscn" id="1_h45sf"]
+[ext_resource type="Script" path="res://yeller.gd" id="2_0hh3p"]
+
+[node name="Yeller" instance=ExtResource("1_h45sf")]
+script = ExtResource("2_0hh3p")
+
+[node name="CollisionShape2D" parent="." index="0"]
+position = Vector2(0, 13.5)
+
+[node name="Sprite2D" parent="." index="1"]
+modulate = Color(0.807843, 0.741176, 0.352941, 1)
+position = Vector2(0, 13.5)
+scale = Vector2(0.6, 2.35)
